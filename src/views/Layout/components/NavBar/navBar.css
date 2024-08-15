@@ -1,0 +1,49 @@
+#navBar-Main {
+  background-color: #fa8ab0;
+  border: 3px solid #b61588;
+  padding: 0 1rem;
+  height: 60px;
+}
+
+#navBar-Left {
+  font-family: 'cooper black';
+  color: white;
+  text-decoration: none;
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  padding: 0;
+}
+
+#navBar-Right a {
+  text-decoration: none;
+  color: white;
+  font: 500 20px/32px Roboto, sans-serif;
+  padding: 0 0.5em;
+}
+
+#navBar-Right a:hover,
+#navBar-Right a:hover > *,
+#navBar-Left:hover {
+  transition: all 0.4s ease;
+  color: #d372b7;
+}
+
+#navBar-Right a.activeLink,
+#navBar-Right a.activeLink > * {
+  color: #b61588;
+}
+
+#pawIcon {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}
+
+#barsIcon {
+  font-size: 2em;
+  color: white;
+}
+
+#barsIcon:hover {
+  transition: all 0.4s ease;
+  color: #d372b7;
+}
