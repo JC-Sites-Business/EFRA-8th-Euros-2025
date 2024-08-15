@@ -1,16 +1,16 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 
-import "./HomePageLayout.scss";
+import "./ContactPageLayout.scss";
 
-const HomePageLayout: React.FC = (): JSX.Element => {
+const ContactPageLayout: React.FC = (): JSX.Element => {
   return (
     <Stack justifyContent={"center"} alignItems={"center"}>
       <Typography id="hpl_h1" variant="h1">
-        Site Coming Soon
+        ContactPage
       </Typography>
     </Stack>
   );
 };
 
-export default HomePageLayout;
+export default ContactPageLayout;
