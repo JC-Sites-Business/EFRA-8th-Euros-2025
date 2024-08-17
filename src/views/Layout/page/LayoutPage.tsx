@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -15,19 +15,38 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
   });
 
   return (
-    <Box
-      sx={{
-        display: "grid",
-        gridTemplateRows: "auto 1fr auto",
-        height: "100dvh",
-        maxHeight: "100dvh",
-        minHeight: 0,
-      }}
-    >
-      <NavBar />
-      <Stack justifyContent={"center"}>{children}</Stack>
+    <>
+      <Stack
+        alignItems={"center"}
+        justifyContent={"end"}
+        sx={{
+          height: "97dvh",
+          maxHeight: "97dvh",
+          minHeight: 0,
+          width: "100dvw",
+        }}
+      >
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateRows: "auto 1fr auto",
+            height: "95dvh",
+            maxHeight: "95dvh",
+            minHeight: 0,
+            width: "98dvw",
+            backgroundColor: "white",
+            borderRadius: "20px",
+            border: "1px solid grey",
+            boxShadow:
+              "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+          }}
+        >
+          <NavBar />
+          <Stack justifyContent={"center"}>{children}</Stack>
+        </Box>
+      </Stack>
       <Footer footer={footer} link={footerLink} />
-    </Box>
+    </>
   );
 };
 
