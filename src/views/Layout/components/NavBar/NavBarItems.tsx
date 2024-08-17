@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React, { useState } from "react";
-import { FaBars, FaPaw } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 
 import useNavBarViewModel, { type T_NavBar } from "./use-navbar.view-model";
@@ -27,11 +27,6 @@ export const NavBarItems: React.FC = () => {
       <Stack id="navBar-Right" direction={"row"} alignItems={"center"}>
         {!showMobile && <NavFullScreen headerItems={vm.headerItems} />}
         {showMobile && <NavMobile headerItems={vm.headerItems} />}
-        {!vm.headerItems.some((it) => it.title === "Login") && (
-          <NavLink className={({ isActive }) => (isActive ? "activeLink" : "")} to={"/user"}>
-            <FaPaw id="pawIcon" />
-          </NavLink>
-        )}
       </Stack>
     </>
   );

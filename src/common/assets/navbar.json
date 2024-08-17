@@ -11,13 +11,13 @@
   },
   {
     "_id": 3,
-    "title": "Event",
-    "link": "/event"
+    "title": "Information",
+    "link": "/information"
   },
   {
     "_id": 4,
-    "title": "Information",
-    "link": "/information"
+    "title": "Event",
+    "link": "/event"
   },
   {
     "_id": 5,
