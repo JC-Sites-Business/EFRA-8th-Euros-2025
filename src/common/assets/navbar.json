@@ -1,0 +1,27 @@
+[
+  {
+    "_id": 1,
+    "title": "Home",
+    "link": "/home"
+  },
+  {
+    "_id": 2,
+    "title": "About",
+    "link": "/about"
+  },
+  {
+    "_id": 3,
+    "title": "Information",
+    "link": "/information"
+  },
+  {
+    "_id": 4,
+    "title": "Event",
+    "link": "/event"
+  },
+  {
+    "_id": 5,
+    "title": "Contact",
+    "link": "/contact"
+  }
+]
