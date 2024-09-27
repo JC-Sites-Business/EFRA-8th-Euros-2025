@@ -29,7 +29,7 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
         <Box
           sx={{
             display: "grid",
-            gridTemplateRows: "auto 1fr auto",
+            gridTemplateRows: "auto 1fr",
             height: "95dvh",
             maxHeight: "95dvh",
             minHeight: 0,
@@ -42,7 +42,9 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
           }}
         >
           <NavBar />
-          <Stack justifyContent={"center"}>{children}</Stack>
+          <Stack justifyContent={"center"} alignItems={"center"}>
+            {children}
+          </Stack>
         </Box>
       </Stack>
       <Footer footer={footer} link={footerLink} />
