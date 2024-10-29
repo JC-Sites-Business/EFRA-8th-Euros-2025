@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import { compareAsc } from "date-fns";
 import React from "react";
+import "./Counter.scss";
 
 type T_Counter = {
   countDownData: {

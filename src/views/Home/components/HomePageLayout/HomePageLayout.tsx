@@ -1,7 +1,7 @@
-import { Card, Grid } from "@mui/material";
+import { Card, Grid, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import bannerLarge from "../../../../common/assets/eurosLarge.jpg";
-import bannerSmall from "../../../../common/assets/euroSmall.jpg";
+import bannerSmall from "../../../../common/assets/eurosSmall.jpg";
 
 import "./HomePageLayout.scss";
 import { Counter } from "../Counter/Counter";
@@ -12,6 +12,23 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   const eventDate = new Date("2025-09-28");
   const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
   const [eventTimeLeft, setEventTimeLeft] = useState(calculateTimeLeft(eventDate));
+  const [imageSrc, setImageSrc] = useState("");
+
+  const updateImageSrc = () => {
+    if (window.innerWidth < 900) {
+      setImageSrc(bannerSmall);
+    } else {
+      setImageSrc(bannerLarge);
+    }
+  };
+
+  useEffect(() => {
+    updateImageSrc();
+    window.addEventListener("resize", updateImageSrc);
+    return () => {
+      window.removeEventListener("resize", updateImageSrc);
+    };
+  }, []);
 
   useEffect(() => {
     const warmUpTimer = setInterval(() => {
@@ -31,17 +48,20 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <img className="banner-image" src={bannerLarge} alt="euros 2025 banner" />
+        <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
       </Grid>
       <Grid item xs={6}>
-        <Card variant="outlined">
+        <Card variant="outlined" className="card-container">
           <Counter countDownData={{ ...warmUpTimeLeft, finishDate: warmUpDate }} />
         </Card>
       </Grid>
       <Grid item xs={6}>
-        <Card variant="outlined">
+        <Card variant="outlined" className="card-container">
           <Counter countDownData={{ ...eventTimeLeft, finishDate: eventDate }} />
         </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Box sx={{ height: 300 }}></Box>
       </Grid>
     </Grid>
   );
