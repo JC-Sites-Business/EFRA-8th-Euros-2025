@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { ConfirmProvider } from "material-ui-confirm";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { IntlProvider } from "react-intl";
@@ -15,9 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider theme={themeOverides}>
       <IntlProvider locale={locale} key={locale} defaultLocale={DEFAULT_LOCALE}>
-        <ConfirmProvider defaultOptions={{ confirmationButtonProps: { autoFocus: true } }}>
-          <App />
-        </ConfirmProvider>
+        <App />
       </IntlProvider>
     </ThemeProvider>
   </React.StrictMode>

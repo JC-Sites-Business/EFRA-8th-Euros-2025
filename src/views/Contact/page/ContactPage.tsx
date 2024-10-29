@@ -4,7 +4,7 @@ import ContactPageLayout from "../components/ContactPageLayout/ContactPageLayout
 const ContactPage: React.FC = (): JSX.Element => {
   return (
     <LayoutPage>
-      <ContactPageLayout />;
+      <ContactPageLayout />
     </LayoutPage>
   );
 };

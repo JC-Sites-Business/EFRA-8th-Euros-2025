@@ -11,28 +11,43 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { useIntl } from "react-intl";
 import { Link, NavLink } from "react-router-dom";
+import navBarData from "../../../../common/assets/navbar.json";
+import { useIntlCommon } from "../../../../common/lang/intl-common/index";
 
-import useNavBarViewModel, { type T_NavBar } from "./use-navbar.view-model";
+export type T_NavBarItem = {
+  _id: number;
+  title: string;
+  link: string;
+};
+
+export type T_NavBar = {
+  headerItems: T_NavBarItem[];
+};
 
 export const NavBarItems: React.FC = () => {
-  const vm: T_NavBar = useNavBarViewModel();
+  const { siteLabel: header } = useIntlCommon();
+  const intl = useIntl();
   const showMobile = useMediaQuery("(max-width: 900px)");
+  navBarData?.map((item) => (item.title = intl.formatMessage({ id: item.title, defaultMessage: item.title })));
+
+  const headerItems: T_NavBarItem[] = navBarData;
 
   return (
     <>
       <NavLink id="navBar-Left" to={"/home"}>
-        {vm.header}
+        {header}
       </NavLink>
       <Stack id="navBar-Right" direction={"row"} alignItems={"center"}>
-        {!showMobile && <NavFullScreen headerItems={vm.headerItems} />}
-        {showMobile && <NavMobile headerItems={vm.headerItems} />}
+        {!showMobile && <NavFullScreen headerItems={headerItems} />}
+        {showMobile && <NavMobile headerItems={headerItems} />}
       </Stack>
     </>
   );
 };
 
-const NavFullScreen: React.FC<Partial<T_NavBar>> = ({ headerItems }) => {
+const NavFullScreen: React.FC<T_NavBar> = ({ headerItems }) => {
   return (
     <>
       {headerItems?.map((item) => (
@@ -48,7 +63,7 @@ const NavFullScreen: React.FC<Partial<T_NavBar>> = ({ headerItems }) => {
   );
 };
 
-const NavMobile: React.FC<Partial<T_NavBar>> = ({ headerItems }) => {
+const NavMobile: React.FC<T_NavBar> = ({ headerItems }) => {
   const [drawState, setDrawState] = useState(false);
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {

@@ -1,9 +1,10 @@
 import { Card, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import banner from "../../../../common/assets/Euros.jpg";
+import bannerLarge from "../../../../common/assets/eurosLarge.jpg";
+import bannerSmall from "../../../../common/assets/euroSmall.jpg";
 
 import "./HomePageLayout.scss";
-import { Counter } from "../../../../common/Components/molecules/counter";
+import { Counter } from "../Counter/Counter";
 import { calculateTimeLeft } from "../../../../common/utils/functions";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
@@ -30,7 +31,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <img className="banner-image" src={banner} alt="euros 2025 banner" />
+        <img className="banner-image" src={bannerLarge} alt="euros 2025 banner" />
       </Grid>
       <Grid item xs={6}>
         <Card variant="outlined">

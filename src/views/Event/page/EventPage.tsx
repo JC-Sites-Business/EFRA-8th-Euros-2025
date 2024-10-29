@@ -4,7 +4,7 @@ import EventPageLayout from "../components/EventPageLayout/EventPageLayout";
 const EventPage: React.FC = (): JSX.Element => {
   return (
     <LayoutPage>
-      <EventPageLayout />;
+      <EventPageLayout />
     </LayoutPage>
   );
 };

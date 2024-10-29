@@ -4,7 +4,7 @@ import InformationPageLayout from "../components/InformationPageLayout/Informati
 const InformationPage: React.FC = (): JSX.Element => {
   return (
     <LayoutPage>
-      <InformationPageLayout />;
+      <InformationPageLayout />
     </LayoutPage>
   );
 };
