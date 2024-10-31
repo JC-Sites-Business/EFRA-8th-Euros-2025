@@ -1,4 +1,4 @@
-import { Card, Grid, Box } from "@mui/material";
+import { Card, Grid, Box, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import bannerLarge from "../../../../common/assets/eurosLarge.jpg";
 import bannerSmall from "../../../../common/assets/eurosSmall.jpg";
@@ -46,24 +46,18 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
-      </Grid>
-      <Grid item xs={6}>
-        <Card variant="outlined" className="card-container">
+    <Stack>
+      <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
+      <Stack direction={"row"} justifyContent={"space-evenly"} sx={{ flexWrap: "wrap" }}>
+        <Card className="card-container">
           <Counter countDownData={{ ...warmUpTimeLeft, finishDate: warmUpDate }} />
         </Card>
-      </Grid>
-      <Grid item xs={6}>
-        <Card variant="outlined" className="card-container">
+        <Card className="card-container">
           <Counter countDownData={{ ...eventTimeLeft, finishDate: eventDate }} />
         </Card>
-      </Grid>
-      <Grid item xs={12}>
-        <Box sx={{ height: 300 }}></Box>
-      </Grid>
-    </Grid>
+      </Stack>
+      <Box sx={{ height: 300 }}></Box>
+    </Stack>
   );
 };
 

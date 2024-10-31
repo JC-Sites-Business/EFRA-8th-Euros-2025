@@ -7,7 +7,9 @@
 }
 
 .card-container {
-  // display: flex;
-  max-width: 35dvw;
-  min-width: 400px;
+  // max-width: 35dvw;
+  // min-width: 400px;
+  width: 600px;
+  height: 300px;
+  border-radius: 15px !important;
 }

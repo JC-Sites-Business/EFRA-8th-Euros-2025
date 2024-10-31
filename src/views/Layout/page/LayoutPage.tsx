@@ -42,9 +42,7 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
           }}
         >
           <NavBar />
-          <Stack justifyContent={"center"} alignItems={"center"}>
-            {children}
-          </Stack>
+          {children}
         </Box>
       </Stack>
       <Footer footer={footer} link={footerLink} />

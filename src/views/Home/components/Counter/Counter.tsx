@@ -19,7 +19,7 @@ export const Counter: React.FC<T_Counter> = ({ countDownData }) => {
   const dateState: number = compareAsc(finishDate.setHours(0, 0, 0, 0), new Date().setHours(0, 0, 0, 0));
 
   return (
-    <Stack justifyContent={"center"} alignItems={"center"}>
+    <Stack justifyContent={"center"} alignItems={"center"} className="counter-container">
       {dateState < 1 ? (
         <Typography sx={{ fontWeight: 900, fontSize: "2rem" }}>
           {dateState === 0 ? "Event Has Started." : "Event Has Passed."}
