@@ -1,15 +1,49 @@
+.main-container {
+  padding: 30px;
+}
+
 .banner-image {
-  width: 95dvw;
+  width: 90dvw;
   height: 35dvh;
-  margin: 25px auto;
+  margin-bottom: 25px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
+.cards-container {
+  flex-wrap: wrap;
+  width: 90dvw;
+}
+
 .card-container {
-  // max-width: 35dvw;
-  // min-width: 400px;
   width: 600px;
   height: 300px;
+  margin-bottom: 25px;
   border-radius: 15px !important;
+}
+
+.chips-container {
+  width: 90dvw;
+}
+
+@media screen and (max-width: 900px) {
+  .main-container {
+    padding: 20px;
+  }
+  
+  .banner-image {
+    width: 80dvw;
+  }
+
+  .cards-container {
+    width: 85dvw;
+  }
+  
+  .card-container {
+    width: 80dvw;
+  }
+
+  .chips-container {
+    width: 80dvw;
+  }
 }

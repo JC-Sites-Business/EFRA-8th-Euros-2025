@@ -1,11 +1,11 @@
-import { Card, Grid, Box, Stack } from "@mui/material";
+import { Button, Card, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import bannerLarge from "../../../../common/assets/eurosLarge.jpg";
 import bannerSmall from "../../../../common/assets/eurosSmall.jpg";
 
-import "./HomePageLayout.scss";
-import { Counter } from "../Counter/Counter";
 import { calculateTimeLeft } from "../../../../common/utils/functions";
+import { Counter } from "../Counter/Counter";
+import "./HomePageLayout.scss";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
   const warmUpDate = new Date("2025-04-28");
@@ -46,9 +46,9 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <Stack>
+    <Stack alignItems={"center"} className="main-container">
       <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
-      <Stack direction={"row"} justifyContent={"space-evenly"} sx={{ flexWrap: "wrap" }}>
+      <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
         <Card className="card-container">
           <Counter countDownData={{ ...warmUpTimeLeft, finishDate: warmUpDate }} />
         </Card>
@@ -56,7 +56,9 @@ const HomePageLayout: React.FC = (): JSX.Element => {
           <Counter countDownData={{ ...eventTimeLeft, finishDate: eventDate }} />
         </Card>
       </Stack>
-      <Box sx={{ height: 300 }}></Box>
+      <Stack className="chips-container">
+        <Button>Test</Button>
+      </Stack>
     </Stack>
   );
 };

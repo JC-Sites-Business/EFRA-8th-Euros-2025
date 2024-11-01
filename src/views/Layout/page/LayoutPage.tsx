@@ -16,24 +16,10 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
 
   return (
     <>
-      <Stack
-        alignItems={"center"}
-        justifyContent={"end"}
-        sx={{
-          height: "97dvh",
-          maxHeight: "97dvh",
-          minHeight: 0,
-          width: "100dvw",
-        }}
-      >
+      <Stack alignItems={"center"} justifyContent={"end"} sx={{ padding: "25px 25px 0 25px" }}>
         <Box
           sx={{
-            display: "grid",
-            gridTemplateRows: "auto 1fr",
-            height: "95dvh",
-            maxHeight: "95dvh",
-            minHeight: 0,
-            width: "98dvw",
+            minHeight: "94dvh",
             backgroundColor: "white",
             borderRadius: "20px",
             border: "1px solid grey",
