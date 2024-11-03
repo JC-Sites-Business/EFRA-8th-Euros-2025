@@ -10,20 +10,26 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
-.cards-container {
+.cards-container,
+.bottons-container {
   flex-wrap: wrap;
   width: 90dvw;
 }
 
-.card-container {
+.homepage-card {
   width: 600px;
-  height: 300px;
+  height: 250px;
   margin-bottom: 25px;
   border-radius: 15px !important;
 }
 
-.chips-container {
-  width: 90dvw;
+.homepage-bottons {
+  width: 600px;
+  height: 40px;
+}
+
+.bottons-container {
+  min-height: 120px;
 }
 
 @media screen and (max-width: 900px) {
@@ -39,11 +45,12 @@
     width: 85dvw;
   }
   
-  .card-container {
+  .homepage-card {
     width: 80dvw;
   }
 
-  .chips-container {
+  .bottons-container {
     width: 80dvw;
+    height: 210px;
   }
 }
