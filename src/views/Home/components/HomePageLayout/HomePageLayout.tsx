@@ -50,10 +50,10 @@ const HomePageLayout: React.FC = (): JSX.Element => {
       <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
       <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
         <Card className="homepage-card">
-          <Counter countDownData={{ ...warmUpTimeLeft, finishDate: warmUpDate }} />
+          <Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" />
         </Card>
         <Card className="homepage-card">
-          <Counter countDownData={{ ...eventTimeLeft, finishDate: eventDate }} />
+          <Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Main-Event" />
         </Card>
       </Stack>
       <Stack direction={"row"} justifyContent={"space-evenly"} className="bottons-container">
