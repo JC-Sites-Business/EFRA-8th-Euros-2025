@@ -28,11 +28,11 @@ export const Counter: React.FC<T_Counter> = ({ countDownData, countHeader }) => 
         {startDate.toLocaleDateString()}
       </Typography>
       {dateState < 1 ? (
-        <Typography sx={{ fontWeight: 900, fontSize: "2.5rem" }}>
+        <Typography className="counter-countdown">
           {dateState === 0 ? "Event Has Started." : "Event Has Passed."}
         </Typography>
       ) : (
-        <Typography sx={{ fontWeight: 900, fontSize: "2.5rem" }}>
+        <Typography className="counter-countdown">
           {months && `${months}M`} {days && `${days}d`} {hours && `${hours}h`} {minutes && `${minutes}m`}{" "}
           {seconds && `${seconds}s`}
         </Typography>

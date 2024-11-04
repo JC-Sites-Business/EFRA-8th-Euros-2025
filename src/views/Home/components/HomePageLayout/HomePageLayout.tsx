@@ -8,7 +8,7 @@ import { Counter } from "../Counter/Counter";
 import "./HomePageLayout.scss";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
-  const warmUpDate = new Date("2025-04-28");
+  const warmUpDate = new Date("2025-06-18");
   const eventDate = new Date("2025-08-11");
   const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
   const [eventTimeLeft, setEventTimeLeft] = useState(calculateTimeLeft(eventDate));
