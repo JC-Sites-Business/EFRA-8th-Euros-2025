@@ -1,0 +1,23 @@
+p {
+  padding: 10px 0px;
+}
+
+.aboutImages img {
+  height: 260px;
+  width: 40vw;
+  max-width: 600px;
+}
+
+.aboutImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .aboutImages img {
+    width: 100%;
+  }
+}
