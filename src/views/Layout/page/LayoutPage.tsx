@@ -21,6 +21,7 @@ const LayoutPage: React.FC<React.PropsWithChildren> = ({ children }): JSX.Elemen
           sx={{
             minHeight: "94dvh",
             backgroundColor: "white",
+            width: "100%",
             borderRadius: "20px",
             border: "1px solid grey",
             boxShadow:
