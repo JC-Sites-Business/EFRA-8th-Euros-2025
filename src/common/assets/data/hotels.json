@@ -1,0 +1,44 @@
+[
+  {
+    "_id": 1,
+    "title": "Camping",
+    "link": "https://sites.google.com/view/halifax-track/hotels",
+    "image": "/hotels/hotels_1.jpg"
+  },
+  {
+    "_id": 2,
+    "title": "Premier Inn - Huddersfield Central",
+    "link": "https://www.premierinn.com/gb/en/hotels/england/west-yorkshire/huddersfield/huddersfield-central.html",
+    "image": "/hotels/hotels_2.jpg"
+  },
+  {
+    "_id": 3,
+    "title": "Premier Inn - Huddersfield North",
+    "link": "https://www.premierinn.com/gb/en/hotels/england/west-yorkshire/huddersfield/huddersfield-north.html",
+    "image": "/hotels/hotels_3.jpg"
+  },
+  {
+    "_id": 4,
+    "title": "Premier Inn - Halifax Centre",
+    "link": "https://www.premierinn.com/gb/en/hotels/england/west-yorkshire/halifax/halifax-south.html",
+    "image": "/hotels/hotels_4.jpg"
+  },
+  {
+    "_id": 5,
+    "title": "Premier Inn - Halifax South",
+    "link": "https://www.premierinn.com/gb/en/hotels/england/west-yorkshire/halifax/halifax-town-centre.html",
+    "image": "/hotels/hotels_5.jpg"
+  },
+  {
+    "_id": 6,
+    "title": "Best Western - Fortune",
+    "link": "https://www.bestwestern.co.uk/hotels/fortune-huddersfield-sure-hotel-collection-by-best-western-84347",
+    "image": "/hotels/hotels_6.jpg"
+  },
+  {
+    "_id": 7,
+    "title": "Cedar Court",
+    "link": "https://www.hotelsone.com/huddersfield-hotels-gb/cedar-court-huddersfield.html",
+    "image": "/hotels/hotels_7.jpg"
+  }
+]

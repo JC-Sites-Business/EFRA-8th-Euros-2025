@@ -48,6 +48,15 @@
 
 @media only screen and (max-width: 900px) {
   #navBar-Left {
-    font-size: clamp(0.75rem, 5vw, 1.5rem);
+    font-size: clamp(0.75rem, 6vw, 1.5rem);
+  }
+
+  #navBar-Main {
+    margin: 0 15px;
+    padding: 0px;
+  }
+
+  #navBar-Right button {
+    padding: 0px;
   }
 }

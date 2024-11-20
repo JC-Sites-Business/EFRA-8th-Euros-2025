@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { useIntl } from "react-intl";
 import { Link, NavLink } from "react-router-dom";
-import navBarData from "../../../../common/assets/navbar.json";
+import navBarData from "../../../../common/assets/data/navbar.json";
 import { useIntlCommon } from "../../../../common/lang/intl-common/index";
 
 export type T_NavBarItem = {

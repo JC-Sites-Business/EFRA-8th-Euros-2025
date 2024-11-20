@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 1,
+    "title": "Facilities",
+    "link": "/information/facilities"
+  },
+  {
+    "_id": 2,
+    "title": "Hotels",
+    "link": "/information/hotels"
+  },
+  {
+    "_id": 3,
+    "title": "Travel",
+    "link": "/information/travel"
+  },
+  {
+    "_id": 4,
+    "title": "VRC",
+    "link": "/information/vrc"
+  }
+]

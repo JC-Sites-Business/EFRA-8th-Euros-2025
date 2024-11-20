@@ -1,0 +1,39 @@
+.info-container {
+  padding-bottom: 30px;
+}
+
+.info-container h3 {
+  margin-bottom: 30px;
+}
+
+.hotelImages-title {
+  height: 70px;
+}
+
+.hotelImages img {
+  height: 200px;
+  width: 100%;
+  border-radius: 5px !important;
+}
+
+.hotelImages-card {
+  width: 350px;
+  height: 300px;
+  padding: 15px;
+  border-radius: 15px !important;
+}
+
+.hotelImages-card:hover {
+  background-color: rgba(242,242,242,0.4);
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  transition: all 0.3s ease !important;
+}
+
+@media screen and (max-width: 900px) {
+  .hotelImages img {
+    width: 100%;
+    height: 150px;
+  }
+}

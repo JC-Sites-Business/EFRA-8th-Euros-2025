@@ -20,3 +20,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.info-container {
+  margin: 0px 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .info-container {
+    margin: 0px 15px;
+  }
+}
