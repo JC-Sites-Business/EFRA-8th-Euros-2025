@@ -1,7 +1,7 @@
 import { Button, Card, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import bannerLarge from "../../../../common/assets/eurosLarge.jpg";
-import bannerSmall from "../../../../common/assets/eurosSmall.jpg";
+import bannerLarge from "../../../../common/assets/images/eurosLarge.jpg";
+import bannerSmall from "../../../../common/assets/images/eurosSmall.jpg";
 
 import { calculateTimeLeft } from "../../../../common/utils/functions";
 import { Counter } from "../Counter/Counter";

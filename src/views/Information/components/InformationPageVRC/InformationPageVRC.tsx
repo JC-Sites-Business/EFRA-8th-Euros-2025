@@ -5,8 +5,8 @@ import "./InformationPageVRC.scss";
 
 const InformationPageVRC: React.FC = (): JSX.Element => {
   return (
-    <Stack justifyContent={"center"} alignItems={"center"}>
-      <Typography>InformationPageVRC</Typography>
+    <Stack className="info-container">
+      <Typography variant="h3">VRC</Typography>
     </Stack>
   );
 };

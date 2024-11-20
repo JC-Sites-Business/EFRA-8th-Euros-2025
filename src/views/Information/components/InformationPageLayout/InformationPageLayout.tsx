@@ -1,8 +1,8 @@
-import { Button, Stack } from "@mui/material";
+import { Box, Button, Stack } from "@mui/material";
 import React from "react";
 import { useIntl } from "react-intl";
 import { NavLink, useLocation } from "react-router-dom";
-import informationNavData from "../../../../common/assets/informationNav.json";
+import informationNavData from "../../../../common/assets/data/informationNav.json";
 import { T_NavBarItem } from "../../../Layout/components/NavBar/NavBarItems";
 import InformationPageFacilites from "../InformationPageFacilites/InformationPageFacilites";
 import InformationPageHotels from "../InformationPageHotels/InformationPageHotels";
@@ -20,27 +20,29 @@ const InformationPageLayout: React.FC = (): JSX.Element => {
   const currentInfo = location.pathname.slice(location.pathname.lastIndexOf("/"), location.pathname.length);
 
   return (
-    <Stack justifyContent={"center"} alignItems={"center"}>
-      <Stack direction={"row"} justifyContent={"space-evenly"} className="info-bottons-container">
-        {infoItems?.map((item) => (
-          <NavLink
-            key={`infoButton_${item.title}`}
-            className={({ isActive }) =>
-              isActive || (currentInfo === "/information" && item.title === "Facilities") ? "activeLink" : ""
-            }
-            to={item.link}
-          >
-            <Button variant="contained" className="info-bottons">
-              {item.title}
-            </Button>
-          </NavLink>
-        ))}
+    <Box>
+      <Stack justifyContent={"center"} alignItems={"center"}>
+        <Stack direction={"row"} justifyContent={"space-evenly"} className="info-bottons-container">
+          {infoItems?.map((item) => (
+            <NavLink
+              key={`infoButton_${item.title}`}
+              className={({ isActive }) =>
+                isActive || (currentInfo === "/information" && item.title === "Facilities") ? "activeLink" : ""
+              }
+              to={item.link}
+            >
+              <Button variant="contained" className="info-bottons">
+                {item.title}
+              </Button>
+            </NavLink>
+          ))}
+        </Stack>
       </Stack>
       {(currentInfo === "/facilities" || currentInfo === "/information") && <InformationPageFacilites />}
       {currentInfo === "/hotels" && <InformationPageHotels />}
       {currentInfo === "/travel" && <InformationPageTravel />}
       {currentInfo === "/vrc" && <InformationPageVRC />}
-    </Stack>
+    </Box>
   );
 };
 

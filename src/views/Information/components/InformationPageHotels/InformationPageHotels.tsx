@@ -5,8 +5,8 @@ import "./InformationPageHotels.scss";
 
 const InformationPageHotels: React.FC = (): JSX.Element => {
   return (
-    <Stack justifyContent={"center"} alignItems={"center"}>
-      <Typography>InformationPageHotels</Typography>
+    <Stack className="info-container">
+      <Typography variant="h3">Hotels</Typography>
     </Stack>
   );
 };

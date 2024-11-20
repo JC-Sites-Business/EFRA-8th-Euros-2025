@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import halifaxCanteen from "../../../../common/assets/halifax-canteen.jpg";
-import halifaxMarshall from "../../../../common/assets/halifax-marshall.jpg";
-import halifaxPitlane from "../../../../common/assets/halifax-pitlane.jpg";
-import halifaxTrack from "../../../../common/assets/halifax-track.jpg";
+import halifaxCanteen from "../../../../common/assets/images/halifax-canteen.jpg";
+import halifaxMarshall from "../../../../common/assets/images/halifax-marshall.jpg";
+import halifaxPitlane from "../../../../common/assets/images/halifax-pitlane.jpg";
+import halifaxTrack from "../../../../common/assets/images/halifax-track.jpg";
 
 import "./AboutPageLayout.scss";
 

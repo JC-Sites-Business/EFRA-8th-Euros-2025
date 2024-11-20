@@ -5,8 +5,8 @@ import "./InformationPageTravel.scss";
 
 const InformationPageTravel: React.FC = (): JSX.Element => {
   return (
-    <Stack justifyContent={"center"} alignItems={"center"}>
-      <Typography>InformationPageTravel</Typography>
+    <Stack className="info-container">
+      <Typography variant="h3">Travel</Typography>
     </Stack>
   );
 };
