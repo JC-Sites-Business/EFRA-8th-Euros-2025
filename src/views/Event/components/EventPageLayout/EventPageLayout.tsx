@@ -6,9 +6,7 @@ import "./EventPageLayout.scss";
 const EventPageLayout: React.FC = (): JSX.Element => {
   return (
     <Stack justifyContent={"center"} alignItems={"center"}>
-      <Typography id="hpl_h1" variant="h1">
-        EventPage
-      </Typography>
+      <Typography variant="h3">EventPage</Typography>
     </Stack>
   );
 };
