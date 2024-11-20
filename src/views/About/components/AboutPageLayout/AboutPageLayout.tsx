@@ -1,9 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import halifaxCanteen from "../../../../common/assets/images/halifax-canteen.jpg";
-import halifaxMarshall from "../../../../common/assets/images/halifax-marshall.jpg";
-import halifaxPitlane from "../../../../common/assets/images/halifax-pitlane.jpg";
-import halifaxTrack from "../../../../common/assets/images/halifax-track.jpg";
 
 import "./AboutPageLayout.scss";
 
@@ -31,10 +27,10 @@ const AboutPageLayout: React.FC = (): JSX.Element => {
         for details on classes.
       </Typography>
       <Box className="aboutImages">
-        <img src={halifaxTrack} alt="halifax track" />
-        <img src={halifaxPitlane} alt="halifax Pits" />
-        <img src={halifaxMarshall} alt="halifax Marshall" />
-        <img src={halifaxCanteen} alt="halifax canteen" />
+        <img src="/images/halifax-track.jpg" alt="halifax track" />
+        <img src="/images/halifax-pitlane.jpg" alt="halifax Pits" />
+        <img src="/images/halifax-marshall.jpg" alt="halifax Marshall" />
+        <img src="/images/halifax-canteen.jpg" alt="halifax canteen" />
       </Box>
       <Typography>
         In 2007 all 280m in length and 5m in width of the track was fully resurfaced. This saw lap times vastly decrease
