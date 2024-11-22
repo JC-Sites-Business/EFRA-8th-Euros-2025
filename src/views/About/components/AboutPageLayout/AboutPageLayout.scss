@@ -14,11 +14,19 @@ p {
   gap: 3rem;
   justify-content: center;
   align-items: center;
+  margin: 30px 0px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (orientation:portrait) {
   .aboutImages img {
     width: 100%;
     height: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation:landscape) {
+  .aboutImages img {
+    width: 125px;
+    height: 125px;
   }
 }

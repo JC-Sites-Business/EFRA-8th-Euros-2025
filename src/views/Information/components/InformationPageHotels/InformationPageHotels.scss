@@ -23,7 +23,7 @@
   transition: all 0.3s ease !important;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (orientation:portrait) {
   .hotelImages img {
     height: 150px;
   }

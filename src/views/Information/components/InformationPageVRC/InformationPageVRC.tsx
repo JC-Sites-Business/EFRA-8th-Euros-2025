@@ -14,7 +14,7 @@ const InformationPageVRC: React.FC = (): JSX.Element => {
       <Link href="https://www.vrcworld.com/about" target="_blank">
         https://www.vrcworld.com
       </Link>
-      <img src="/images/vrc.jpg" />
+      <img src="/images/vrc.jpg" className="vrc-image" />
     </Stack>
   );
 };

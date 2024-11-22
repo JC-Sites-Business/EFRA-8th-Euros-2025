@@ -1,11 +1,11 @@
-img {
+.vrc-image {
   height: 50vh;
   width: 100%;
   margin-top: 30px;
 }
 
-@media screen and (max-width: 900px) {
-  img {
+@media screen and (max-width: 900px) and (orientation:portrait) {
+  .vrc-image {
     height: 20vh;
   }
 }

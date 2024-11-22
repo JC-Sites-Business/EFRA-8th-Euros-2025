@@ -16,7 +16,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   const [imageSrc, setImageSrc] = useState("");
 
   const updateImageSrc = () => {
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 900 && window.matchMedia("(orientation: portrait)").matches) {
       setImageSrc(bannerSmall);
     } else {
       setImageSrc(bannerLarge);

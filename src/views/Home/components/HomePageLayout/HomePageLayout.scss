@@ -54,3 +54,14 @@
     height: 210px;
   }
 }
+
+@media screen and (max-width: 1400px) and (orientation:landscape) {  
+  .banner-image {
+    height: 55dvh;
+  }
+
+  .bottons-container {
+    width: 80dvw;
+    height: 250px;
+  }
+}
