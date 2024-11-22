@@ -4,7 +4,7 @@ import { useIntl } from "react-intl";
 import { NavLink, useLocation } from "react-router-dom";
 import informationNavData from "../../../../common/assets/data/informationNav.json";
 import { T_NavBarItem } from "../../../Layout/components/NavBar/NavBarItems";
-import InformationPageFacilites from "../InformationPageFacilites/InformationPageFacilites";
+import InformationPageFacilities from "../InformationPageFacilities/InformationPageFacilities";
 import InformationPageHotels from "../InformationPageHotels/InformationPageHotels";
 import InformationPageTravel from "../InformationPageTravel/InformationPageTravel";
 import InformationPageVRC from "../InformationPageVRC/InformationPageVRC";
@@ -38,7 +38,7 @@ const InformationPageLayout: React.FC = (): JSX.Element => {
           ))}
         </Stack>
       </Stack>
-      {(currentInfo === "/facilities" || currentInfo === "/information") && <InformationPageFacilites />}
+      {(currentInfo === "/facilities" || currentInfo === "/information") && <InformationPageFacilities />}
       {currentInfo === "/hotels" && <InformationPageHotels />}
       {currentInfo === "/travel" && <InformationPageTravel />}
       {currentInfo === "/vrc" && <InformationPageVRC />}

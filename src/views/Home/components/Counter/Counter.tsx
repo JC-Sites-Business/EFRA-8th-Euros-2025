@@ -29,7 +29,7 @@ export const Counter: React.FC<T_Counter> = ({ countDownData, countHeader }) => 
         {countHeader}
       </Typography>
       <Typography variant="h3" className="counter-date">
-        {dateState === 600 ? "June 2025" : startDate.toLocaleDateString()}
+        {dateState === 600 ? "TBC" : startDate.toLocaleDateString()}
       </Typography>
       {dateState < 1 ? (
         <Typography className="counter-countdown">

@@ -1,18 +1,18 @@
 import { List, ListItem, Stack, Typography } from "@mui/material";
 import React from "react";
 
-import "./InformationPageFacilites.scss";
+import "./InformationPageFacilities.scss";
 
-const InformationPageFacilites: React.FC = (): JSX.Element => {
+const InformationPageFacilities: React.FC = (): JSX.Element => {
   return (
     <Stack className="info-container">
-      <Typography variant="h3">Facilites</Typography>
+      <Typography variant="h3">Facilities</Typography>
       <List>
         <ListItem>Covered pit area</ListItem>
         <ListItem>Raised pitlane</ListItem>
         <ListItem>Rostrum centre</ListItem>
         <ListItem>Variety of Hot and cold food served trackside</ListItem>
-        <ListItem>new cafe area/viewing</ListItem>
+        <ListItem>new rest room/track viewing</ListItem>
         <ListItem>On site camping</ListItem>
         <ListItem>On site parking</ListItem>
         <ListItem>On site shower block and seperate toilets</ListItem>
@@ -27,4 +27,4 @@ const InformationPageFacilites: React.FC = (): JSX.Element => {
   );
 };
 
-export default InformationPageFacilites;
+export default InformationPageFacilities;
