@@ -15,7 +15,7 @@ const ContactPageLayout: React.FC = (): JSX.Element => {
       <Box className="contactDetails">
         <Typography variant="h3">Contact Us</Typography>
         <Typography>Halifax RC Race Track</Typography>
-        <Typography>Staniland Road</Typography>
+        <Typography>Stainland Road</Typography>
         <Typography>Halifax</Typography>
         <Typography>HX4 8LS</Typography>
         <Typography>

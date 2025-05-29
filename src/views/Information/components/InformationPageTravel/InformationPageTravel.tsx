@@ -9,7 +9,7 @@ const InformationPageTravel: React.FC = (): JSX.Element => {
       <Typography variant="h3">Travel</Typography>
       <Typography variant="h5">Track Address</Typography>
       <Typography>Halifax RC Race Track</Typography>
-      <Typography>Staniland Road</Typography>
+      <Typography>Stainland Road</Typography>
       <Typography>Halifax</Typography>
       <Typography>HX4 8LS</Typography>
       <Typography>United Kingdom</Typography>
