@@ -5,12 +5,13 @@ import bannerSmall from "/images/eurosSmall.jpg";
 
 import { calculateTimeLeft } from "../../../../common/utils/functions";
 import { Counter } from "../Counter/Counter";
+import { Result } from "../Result/Result";
 import "./HomePageLayout.scss";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
-  const warmUpDate = new Date("2025-06-13");
+  // const warmUpDate = new Date("2025-06-13");
   const eventDate = new Date("2025-08-11");
-  const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
+  // const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
   const [eventTimeLeft, setEventTimeLeft] = useState(calculateTimeLeft(eventDate));
   const [imageSrc, setImageSrc] = useState("");
 
@@ -31,16 +32,16 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const warmUpTimer = setInterval(() => {
-      setWarmUpTimeLeft(calculateTimeLeft(warmUpDate));
-    }, 1000);
+    // const warmUpTimer = setInterval(() => {
+    //   setWarmUpTimeLeft(calculateTimeLeft(warmUpDate));
+    // }, 1000);
 
     const eventTimer = setInterval(() => {
       setEventTimeLeft(calculateTimeLeft(eventDate));
     }, 1000);
 
     return () => {
-      clearInterval(warmUpTimer);
+      // clearInterval(warmUpTimer);
       clearInterval(eventTimer);
     }; // Clean up the interval on component unmount
   }, []);
@@ -50,7 +51,8 @@ const HomePageLayout: React.FC = (): JSX.Element => {
       <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
       <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
         <Card className="homepage-card">
-          <Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" />
+          {/* <Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" /> */}
+          <Result nitroChamp="Alex Thurston" electricChamp="Mark Green" resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"/>
         </Card>
         <Card className="homepage-card">
           <Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Main-Event" />
