@@ -1,9 +1,10 @@
 .main-container {
   padding: 30px;
+  height: calc(100vh - (60px + 50px + 20px));
 }
 
 .banner-image {
-  width: 90dvw;
+  width: 66dvw;
   height: 35dvh;
   margin-bottom: 25px;
   border-radius: 15px;
@@ -13,7 +14,7 @@
 .cards-container,
 .bottons-container {
   flex-wrap: wrap;
-  width: 90dvw;
+  // width: 90dvw;
 }
 
 .homepage-card {
@@ -35,10 +36,6 @@
 @media screen and (max-width: 900px) {
   .main-container {
     padding: 20px;
-  }
-  
-  .banner-image {
-    width: 80dvw;
   }
 
   .cards-container {
