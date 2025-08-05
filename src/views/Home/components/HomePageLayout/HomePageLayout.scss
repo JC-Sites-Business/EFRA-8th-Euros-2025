@@ -14,7 +14,6 @@
 .cards-container,
 .bottons-container {
   flex-wrap: wrap;
-  // width: 90dvw;
 }
 
 .homepage-card {
@@ -36,19 +35,22 @@
 @media screen and (max-width: 900px) {
   .main-container {
     height: 100%;
-    padding: 20px;
   }
 
-  .cards-container {
-    width: 85dvw;
+  // .cards-container {
+  //   width: 325px;
+  // }
+
+  .banner-image {
+    width: 325px;
   }
   
   .homepage-card {
-    width: 80dvw;
+    width: 325px;
   }
 
   .bottons-container {
-    width: 80dvw;
+    width: 325px;
     margin-bottom: 15px;
   }
 }

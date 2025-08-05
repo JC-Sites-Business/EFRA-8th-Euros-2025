@@ -49,7 +49,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <Stack flexDirection={"row"} className="main-container">
+    <Stack flexDirection={"row"} justifyContent={"center"} className="main-container">
       {screneenWidth > 900 && <Sponsors position="left" />}
       <Box>
         <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
