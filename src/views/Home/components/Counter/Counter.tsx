@@ -21,7 +21,7 @@ export const Counter: React.FC<T_Counter> = ({ countDownData, countHeader }) => 
     ? 600
     : compareAsc(startDate.setHours(0, 0, 0, 0), new Date().setHours(0, 0, 0, 0));
 
-  const countdown = `${months && `${months}M`} ${days && `${days}d`} ${hours && `${hours}h`} ${minutes && `${minutes}m`} ${seconds && `${seconds}s`}`;
+  const countdown = `${months != 0 ? `${months}M ` : ""}${days != 0 ? `${days}d `: ""}${hours != 0 ? `${hours}h ` : ""}${minutes != 0 ? `${minutes}m ` : ""}${seconds != 0 ? `${seconds}s` : ""}`;
 
   return (
     <Stack justifyContent={"space-evenly"} alignItems={"center"} className="counter-container">

@@ -1,9 +1,10 @@
 .main-container {
   padding: 30px;
+  height: calc(100vh - (60px + 50px + 20px));
 }
 
 .banner-image {
-  width: 90dvw;
+  width: 66dvw;
   height: 35dvh;
   margin-bottom: 25px;
   border-radius: 15px;
@@ -13,7 +14,6 @@
 .cards-container,
 .bottons-container {
   flex-wrap: wrap;
-  width: 90dvw;
 }
 
 .homepage-card {
@@ -34,24 +34,24 @@
 
 @media screen and (max-width: 900px) {
   .main-container {
-    padding: 20px;
-  }
-  
-  .banner-image {
-    width: 80dvw;
+    height: 100%;
   }
 
-  .cards-container {
-    width: 85dvw;
+  // .cards-container {
+  //   width: 325px;
+  // }
+
+  .banner-image {
+    width: 325px;
   }
   
   .homepage-card {
-    width: 80dvw;
+    width: 325px;
   }
 
   .bottons-container {
-    width: 80dvw;
-    height: 210px;
+    width: 325px;
+    margin-bottom: 15px;
   }
 }
 
@@ -62,6 +62,5 @@
 
   .bottons-container {
     width: 80dvw;
-    height: 250px;
   }
 }
