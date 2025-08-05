@@ -1,4 +1,4 @@
-import { Button, Card, Stack } from "@mui/material";
+import { Box, Button, Card, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import bannerLarge from "/images/eurosLarge.jpg";
 import bannerSmall from "/images/eurosSmall.jpg";
@@ -10,6 +10,7 @@ import "./HomePageLayout.scss";
 import { Sponsors } from "../Sponsors/Sponsors";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
+  const screneenWidth = window.innerWidth;
   // const warmUpDate = new Date("2025-06-13");
   const eventDate = new Date("2025-08-11");
   // const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
@@ -23,7 +24,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
       setImageSrc(bannerLarge);
     }
   };
-
+  
   useEffect(() => {
     updateImageSrc();
     window.addEventListener("resize", updateImageSrc);
@@ -49,8 +50,8 @@ const HomePageLayout: React.FC = (): JSX.Element => {
 
   return (
     <Stack flexDirection={"row"} className="main-container">
-      <Sponsors position="left" />
-      <Stack>
+      {screneenWidth > 900 && <Sponsors position="left" />}
+      <Box>
         <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
           <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
           <Card className="homepage-card">          
@@ -61,15 +62,14 @@ const HomePageLayout: React.FC = (): JSX.Element => {
             <Result nitroChamp="Alex Thurston" electricChamp="Mark Green" resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"/>
           </Card>
         </Stack>
-        <Stack direction={"row"} justifyContent={"space-evenly"} className="bottons-container">
+        <Stack direction={"row"} justifyContent={"space-evenly"} gap={"15px"} className="bottons-container">
           <Button variant="contained" target="_blank" href="http://halifaxtrack.co.uk/" className="homepage-bottons">
             Track
           </Button>
-          {/* TODO - This link needs updating */}
           <Button
             variant="contained"
             target="_blank"
-            href="https://www.efra.ws/race-calendar/"
+            href="https://www.efra.ws/events/ec-25-8th-ic-track-halifax-great-britain/"
             className="homepage-bottons"
           >
             EFRA
@@ -82,9 +82,10 @@ const HomePageLayout: React.FC = (): JSX.Element => {
           <Button variant="contained" target="_blank" href="www.google.com" className="homepage-bottons" disabled>
             Results
           </Button>
+          {screneenWidth < 900 && <Sponsors position="centre" />}
         </Stack>
-      </Stack>
-      <Sponsors position="right" />
+      </Box>
+      {screneenWidth > 900 && <Sponsors position="right" />}
     </Stack>
   );
 };
