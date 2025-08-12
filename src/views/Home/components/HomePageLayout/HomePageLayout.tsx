@@ -74,8 +74,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
           >
             EFRA
           </Button>
-          {/* TODO - This link needs updating */}
-          <Button variant="contained" target="_blank" href="www.google.com" className="homepage-bottons" disabled>
+          <Button variant="contained" target="_blank" href="https://myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89784&tId=E&hId[1]=org#" className="homepage-bottons">
             Live Timing
           </Button>
           {/* TODO - This link needs updating */}

@@ -21,7 +21,7 @@ export const Counter: React.FC<T_Counter> = ({ countDownData, countHeader }) => 
     ? 600
     : compareAsc(startDate.setHours(0, 0, 0, 0), new Date().setHours(0, 0, 0, 0));
 
-  const countdown = `${months != 0 ? `${months}M ` : ""}${days != 0 ? `${days}d `: ""}${hours != 0 ? `${hours}h ` : ""}${minutes != 0 ? `${minutes}m ` : ""}${seconds != 0 ? `${seconds}s` : ""}`;
+  const countdown = `${months != 0 ? `${months}M ` : ""}${days != 0 ? `${days}d ` : ""}${hours != 0 ? `${hours}h ` : ""}${minutes != 0 ? `${minutes}m ` : ""}${seconds != 0 ? `${seconds}s` : ""}`;
 
   return (
     <Stack justifyContent={"space-evenly"} alignItems={"center"} className="counter-container">
@@ -29,11 +29,13 @@ export const Counter: React.FC<T_Counter> = ({ countDownData, countHeader }) => 
         {countHeader}
       </Typography>
       <Typography variant="h3" className="counter-date">
-        {dateState === 600 ? "TBC" : startDate.toLocaleDateString()}
+        {dateState === 600
+          ? "TBC"
+          : startDate.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" })}
       </Typography>
       {dateState < 1 ? (
         <Typography className="counter-countdown">
-          {dateState === 0 ? "Event Has Started." : "Event Has Passed."}
+          {dateState === 0 ? "Event Has Started." : "Results will show soon."}
         </Typography>
       ) : (
         <Typography className="counter-countdown">{dateState === 600 ? "Date to be Confirmed" : countdown}</Typography>
