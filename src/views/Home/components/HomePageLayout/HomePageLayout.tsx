@@ -1,4 +1,4 @@
-import { Box, Button, Card, Stack } from "@mui/material";
+import { Button, Card, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import bannerLarge from "/images/eurosLarge.jpg";
 import bannerSmall from "/images/eurosSmall.jpg";
@@ -10,10 +10,12 @@ import "./HomePageLayout.scss";
 import { Sponsors } from "../Sponsors/Sponsors";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
+  const warmupFinished = true;
+  const eventFinished = false;
   const screneenWidth = window.innerWidth;
-  // const warmUpDate = new Date("2025-06-13");
-  const eventDate = new Date("2025-08-11");
-  // const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
+  const warmUpDate = new Date("2025-06-13");
+  const eventDate = new Date("2025-08-13");
+  const [warmUpTimeLeft, setWarmUpTimeLeft] = useState(calculateTimeLeft(warmUpDate));
   const [eventTimeLeft, setEventTimeLeft] = useState(calculateTimeLeft(eventDate));
   const [imageSrc, setImageSrc] = useState("");
 
@@ -24,7 +26,7 @@ const HomePageLayout: React.FC = (): JSX.Element => {
       setImageSrc(bannerLarge);
     }
   };
-  
+
   useEffect(() => {
     updateImageSrc();
     window.addEventListener("resize", updateImageSrc);
@@ -34,32 +36,52 @@ const HomePageLayout: React.FC = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    // const warmUpTimer = setInterval(() => {
-    //   setWarmUpTimeLeft(calculateTimeLeft(warmUpDate));
-    // }, 1000);
+    if (!warmupFinished) {
+      const warmUpTimer = setInterval(() => {
+        setWarmUpTimeLeft(calculateTimeLeft(warmUpDate));
+      }, 1000);
+      return () => {
+        clearInterval(warmUpTimer);
+      };
+    }
+  }, []);
 
-    const eventTimer = setInterval(() => {
-      setEventTimeLeft(calculateTimeLeft(eventDate));
-    }, 1000);
-
-    return () => {
-      // clearInterval(warmUpTimer);
-      clearInterval(eventTimer);
-    }; // Clean up the interval on component unmount
+  useEffect(() => {
+    if (!eventFinished) {
+      const eventTimer = setInterval(() => {
+        setEventTimeLeft(calculateTimeLeft(eventDate));
+      }, 1000);
+      return () => {
+        clearInterval(eventTimer);
+      };
+    }
   }, []);
 
   return (
     <Stack flexDirection={"row"} justifyContent={"center"} className="main-container">
       {screneenWidth > 900 && <Sponsors position="left" />}
-      <Box>
+      <Stack justifyContent={"space-evenly"} className="main-layout">
+        <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
         <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
-          <img className="banner-image" src={imageSrc} alt="euros 2025 banner" />
-          <Card className="homepage-card">          
-            <Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Main-Event" />
+          <Card className="homepage-card">
+            {eventFinished ? (
+            <Result
+              raceEvent="Championship"
+              nitroChamp="Unknown"
+              electricChamp="Unknown"
+              resultLink="https://www.myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89785&tId=E&hId[1]=org"
+            />
+            ) : (<Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Championship" />)}
           </Card>
           <Card className="homepage-card">
-            {/* <Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" /> */}
-            <Result nitroChamp="Alex Thurston" electricChamp="Mark Green" resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"/>
+            {warmupFinished ? (
+            <Result
+              raceEvent="Warm-Up"
+              nitroChamp="Alex Thurston"
+              electricChamp="Mark Green"
+              resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"
+            />
+            ) : (<Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" />)}
           </Card>
         </Stack>
         <Stack direction={"row"} justifyContent={"space-evenly"} gap={"15px"} className="bottons-container">
@@ -74,16 +96,20 @@ const HomePageLayout: React.FC = (): JSX.Element => {
           >
             EFRA
           </Button>
-          <Button variant="contained" target="_blank" href="https://myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89784&tId=E&hId[1]=org#" className="homepage-bottons">
+          <Button
+            variant="contained"
+            target="_blank"
+            href="https://www.myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89785&tId=E&hId[1]=org"
+            className="homepage-bottons"
+          >
             Live Timing
           </Button>
-          {/* TODO - This link needs updating */}
           <Button variant="contained" target="_blank" href="www.google.com" className="homepage-bottons" disabled>
             Results
           </Button>
           {screneenWidth < 900 && <Sponsors position="centre" />}
         </Stack>
-      </Box>
+      </Stack>
       {screneenWidth > 900 && <Sponsors position="right" />}
     </Stack>
   );

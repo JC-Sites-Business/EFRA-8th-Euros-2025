@@ -3,8 +3,11 @@
   height: calc(100vh - (60px + 50px + 20px));
 }
 
+.main-layout {
+  width: 55dvw;
+}
+
 .banner-image {
-  width: 66dvw;
   height: 35dvh;
   margin-bottom: 25px;
   border-radius: 15px;
@@ -17,14 +20,14 @@
 }
 
 .homepage-card {
-  width: 600px;
+  width: 25dvw;
   height: 250px;
   margin-bottom: 25px;
   border-radius: 15px !important;
 }
 
 .homepage-bottons {
-  width: 600px;
+  width: 25dvw;
   height: 40px;
 }
 
@@ -32,31 +35,21 @@
   min-height: 120px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .main-container {
     height: 100%;
+    padding: 15px;
   }
 
-  .banner-image {
-    width: 80dvw;
+  .main-layout {
+    width: 100%;
   }
   
   .homepage-card {
-    width: 80dvw;
+    width: 100%;
   }
 
-  .bottons-container {
-    width: 80dvw;
-    margin-bottom: 15px;
-  }
+  .homepage-bottons {
+  width: 100%;
 }
-
-@media screen and (max-width: 1400px) and (orientation:landscape) {  
-  .banner-image {
-    height: 55dvh;
-  }
-
-  .bottons-container {
-    width: 80dvw;
-  }
 }
