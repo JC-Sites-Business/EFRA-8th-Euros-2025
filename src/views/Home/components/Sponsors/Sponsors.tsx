@@ -20,21 +20,21 @@ export const Sponsors: React.FC<T_Sponsors> = ({ position }) => {
               src={`/images/${sponsor}.png`}
               alt={sponsor}
               className="sponsor-image"
-              width={"300px"}
+              width={"100%"}
             />
           ))
         }
       </Stack>
     ) : (
       <Stack className="sponsor-side">
-        <Stack justifyContent="space-between" className={`sponsor-list`} height={"100%"}>
+        <Stack justifyContent="space-between" alignItems={"center"} className={`sponsor-list`} height={"100%"}>
           {(position === "left" ? sponsorsLeft : sponsorsRight).map((sponsor, index) => (
             <img
               key={`sponsor-sides-${index}`}
               src={`/images/${sponsor}.png`}
               alt={sponsor}
               className="sponsor-image"
-              width={"220px"}
+              width={"80%"}
             />
           ))}
         </Stack>
