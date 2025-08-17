@@ -6,10 +6,11 @@ type T_Result = {
   raceEvent: string;
   nitroChamp: string;
   electricChamp: string;
+  resultSite: string;
   resultLink: string;
 };
 
-export const Result: React.FC<T_Result> = ({ raceEvent, nitroChamp, electricChamp, resultLink }) => {
+export const Result: React.FC<T_Result> = ({ raceEvent, nitroChamp, electricChamp, resultSite, resultLink }) => {
 
   return (
     <Stack justifyContent={"space-evenly"} alignItems={"center"} className="result-container">
@@ -23,7 +24,7 @@ export const Result: React.FC<T_Result> = ({ raceEvent, nitroChamp, electricCham
         <b>Electric Champion: </b><span className="result-champ">{electricChamp}</span>
       </Typography>
       <Typography variant="body1">
-        Result Link: <a href={resultLink} target="_blank" rel="noopener noreferrer">RC-Results</a>
+        Result Link: <a href={resultLink} target="_blank" rel="noopener noreferrer">{resultSite}</a>
       </Typography>
     </Stack>
   );

@@ -11,7 +11,7 @@ import { Sponsors } from "../Sponsors/Sponsors";
 
 const HomePageLayout: React.FC = (): JSX.Element => {
   const warmupFinished = true;
-  const eventFinished = false;
+  const eventFinished = true;
   const screneenWidth = window.innerWidth;
   const warmUpDate = new Date("2025-06-13");
   const eventDate = new Date("2025-08-13");
@@ -65,23 +65,29 @@ const HomePageLayout: React.FC = (): JSX.Element => {
         <Stack direction={"row"} justifyContent={"space-evenly"} className="cards-container">
           <Card className="homepage-card">
             {eventFinished ? (
-            <Result
-              raceEvent="Championship"
-              nitroChamp="Unknown"
-              electricChamp="Unknown"
-              resultLink="https://www.myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89785&tId=E&hId[1]=org"
-            />
-            ) : (<Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Championship" />)}
+              <Result
+                raceEvent="Championship"
+                nitroChamp="Dario Balestri"
+                electricChamp="Mark Green"
+                resultSite="MyRCM"
+                resultLink="https://www.myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89785&tId=E&hId[1]=org"
+              />
+            ) : (
+              <Counter countDownData={{ ...eventTimeLeft, startDate: eventDate }} countHeader="Championship" />
+            )}
           </Card>
           <Card className="homepage-card">
             {warmupFinished ? (
-            <Result
-              raceEvent="Warm-Up"
-              nitroChamp="Alex Thurston"
-              electricChamp="Mark Green"
-              resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"
-            />
-            ) : (<Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" />)}
+              <Result
+                raceEvent="Warm-Up"
+                nitroChamp="Alex Thurston"
+                electricChamp="Mark Green"
+                resultSite="RC Results"
+                resultLink="https://www.rc-results.com/Viewer/Main/MeetingSummary?meetingId=16110"
+              />
+            ) : (
+              <Counter countDownData={{ ...warmUpTimeLeft, startDate: warmUpDate }} countHeader="Warm-Up" />
+            )}
           </Card>
         </Stack>
         <Stack direction={"row"} justifyContent={"space-evenly"} gap={"15px"} className="bottons-container">
@@ -104,7 +110,12 @@ const HomePageLayout: React.FC = (): JSX.Element => {
           >
             Live Timing
           </Button>
-          <Button variant="contained" target="_blank" href="www.google.com" className="homepage-bottons" disabled>
+          <Button
+            variant="contained"
+            target="_blank"
+            href="https://www.myrcm.ch/myrcm/main?dId[O]=638&pLa=en&dId[E]=89785&tId=E&hId[1]=org"
+            className="homepage-bottons"
+          >
             Results
           </Button>
           {screneenWidth < 900 && <Sponsors position="centre" />}
